@@ -20,3 +20,4 @@ def part2(lines):
         common = set(line) & set(next(lines)) & set(next(lines))
         yield score(common.pop())
 print(sum(part2(open("day3.txt"))))
+
