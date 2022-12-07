@@ -1,3 +1,4 @@
+
 with open("day6.txt")as f:
     line = f.read()
 
