@@ -1,22 +1,6 @@
-from collections import deque
+with open("day6.txt")as f:
+    line = f.read()
 
-def all_unique(seq):
-    for i, elem in enumerate(seq):
-        try:
-            seq.index(elem, 0, i)
-        except ValueError:
-            continue
-        return False
-    else:
-        return True
+print(next(i+4 for i in range(1,len(line))if len(set(line[i:i+4]))==4))
 
-def part_1(data, window=4):
-    buffer = deque((), maxlen=window)
-    for i, char in enumerate(data):
-        if all_unique(buffer) and len(buffer) == window:
-            return i
-        else:
-            buffer.append(char)
-
-def part_2(data, window=14):
-    return part_1(data, window)
+print(next(i+14 for i in range(1,len(line))if len(set(line[i:i+14]))==14))
